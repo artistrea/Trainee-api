@@ -4,7 +4,7 @@ FactoryBot.define do
     description { "MyString" }
     price { 1 }
     stock { 1 }
-    brand {Brand}
-    category {Category}
+    brand {create(:brand)}
+    category {create(:category)}
   end
 end

@@ -4,24 +4,30 @@ RSpec.describe Product, type: :model do
   context "Factory test" do
     it {expect(build(:product)).to be_valid}
   end
+  
   context "Validating price"  do
-    it "is invalid if nil" do
-      expect(build(:product, price: nil)).to_not be_valid
+    it 'invalid price if nil' do
+      preco = Product.new(price: nil)
+      expect(preco).to_not be_valid
     end  
   end 
   context "Check stock"  do
     it "Stock is empty" do
-      expect(build(:product, stock: nil)).to_not be_valid
+      estoque =Product.new(stock: nil)
+      expect(estoque).to_not be_valid
     end  
   end
   context "Brand test"  do
-    it "Invalid if Brand is nil" do
-      expect(build(:product, brand_id: nil)).to_not be_valid  
+    it 'invalid product if has no brand' do
+      marca = Product.new(brand_id: nil)
+      expect(marca).to_not be_valid
     end
   end    
+  
   context "Category test"  do
-    it "Invalid if Brand is nil" do
-      expect(build(:product, category_id: nil)).to_not be_valid  
+    it 'invalid product if has no category' do
+      categ = Product.new(category_id: nil)
+      expect(categ).to_not be_valid
     end
   end
 
