@@ -18,7 +18,27 @@ class Api::V1::CategoryController < ApplicationController
     rescue StandardError => e
         render json: e, status: :bad_request
     end    
-    private     
+         
+    
+    def update
+        category = Category.find(params[:id])
+        category.update!(category_params)
+        render json: category, status: :ok
+    rescue StandardError => e 
+        render json: e, status: :bad_request
+    end    
+
+    def delete 
+        category = Category.find(params[:id])
+        category.destroy!
+        render json: category, status: :ok
+    rescue StandardError => e 
+        render json: e, status: :bad_request
+    end    
+
+
+    
+    private
     def category_params    
         params.require(:category).permit(:name)
     end    

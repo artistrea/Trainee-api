@@ -42,9 +42,43 @@ RSpec.describe "Api::V1::Categories", type: :request do
     end
     context 'bad params' do
       it 'when param is nil' do 
-        post "/api/v1/category/create", params:{category: category_params}
+        post "/api/v1/category/create", params:{category: nil}
         expect(response).to have_http_status(:bad_request)
       end
     end  
+  end
+  describe 'PATCH/update' do  
+    let(:category) do
+      create(:category,name: "Kitchen")
+    end  
+    context 'params ok' do
+      it 'return http status ok' do
+        patch "/api/v1/category/update/#{category.id}", params:{category: {name:"Utility"}}
+        expect(response).to have_http_status(:ok)
+      end
+    end    
+    context 'bad params'do
+      it 'when params is nill' do
+          patch "/api/v1/category/update/#{category.id}", params:{category: {name: nil}}
+         expect(response).to have_http_status(:bad_request)
+      end   
+    end
+  end   
+    describe 'DELETE/delete_id' do  
+      let(:category) do
+        create(:category)
+      end    
+      context 'params ok' do
+        it 'return http status ok' do
+          delete "/api/v1/category/delete/#{category.id}"
+          expect(response).to have_http_status(:ok)
+        end
+      end
+      context 'bad params' do
+        it 'params is nill' do
+          delete "/api/v1/category/delete/-1"
+          expect(response).to have_http_status(:bad_request)
+        end
+      end   
   end      
 end
