@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.create!(name: "Gadgets")
+Category.create!(name: "Clothes")
+Category.create!(name: "Games")
+
+Brand.create!(name: "Macrohard")
+Brand.create!(name: "Vanz")
+Brand.create!(name: "Nontendi")
+
+Products.create!(id:1,name: "Nontendi Switch",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:2,name: "Mouse rgb 50000 dpi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:3,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:4,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:5,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:6,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:7,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:8,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:9,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+Products.create!(id:10,name: "Nontendi",description: " " price: 200,stock: 45,brand_id:1 ,category_id: )
+
+
+

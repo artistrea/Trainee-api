@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace'api' do
+    namespace 'v1' do 
+      scope 'category' do
+        get 'index', to: 'category#index'
+        get 'show/:id', to: 'category#show'
+        post 'create', to: 'category#create'
+      end
+    end
+  end      
 end
