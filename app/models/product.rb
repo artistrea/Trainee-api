@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :price, presence: :true 
   #################
   # validações desnescessárias, pois por padrão o rails não permite que seja criado
-  # uma model que pertence a outra sem receber o id da model a qual pertence
+  # uma model que pertence a outra sem receber o id ou objeto da model a qual pertence
 
   # validates :brand_id, presence: :true
   # validates :category_id, presence: :true
